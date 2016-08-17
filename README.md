@@ -1,2 +1,2 @@
 # Orchestra
-Learning Orchestra at HMS
+This repository contains files on operating the Orchestra computing cluster at HMS. 
