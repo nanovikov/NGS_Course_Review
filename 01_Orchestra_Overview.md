@@ -1,5 +1,9 @@
-# Harvard Medical School Research Computing
+# Harvard Medical School [Research Computing](https://rc.hms.harvard.edu/#)
 *based on the [Orchestra Wiki New User Guide](https://wiki.med.harvard.edu/Orchestra/NewUserGuide) by Kristina Holton*
+
+## Software
+
+Licensed software can be found [here](https://wiki.med.harvard.edu/Software/)
 
 ## Orchestra 
 *Shared high-performance computing cluster*
@@ -8,9 +12,17 @@
 * petabytes of data storage
 * supports next-gen data analysis
 
+*Every user gets a home directory and access to /n/scratch2/*
+
+* home directory size: 100 GB
+* /n/scratch2/ size: 5TB
+* /n/scratch2/ files are **deleted after 15 days**
+
 For questions, contact: <rchelp@hms.harvard.edu>
 
 ### Set up
+
+
 To login: 
 
 	ssh username@orchestra.med.harvard.edu
@@ -41,6 +53,15 @@ To automatically load modules when you log in, alter your `.bashrc` file to incl
 	
 ### Load sharing facility (LSF)
 *System for ensuring that users fairly share the processors and memory in the Orchestra cluster*
+
+* Assigns importance to individual users as shares
+* Individuals with the more shares are higher priority
+* Individuals with equal shares are treated on a first-come, first-serve basis
+
+**User priority increases when using less than the assigned fair share of the cluster**
+
+*See [LSF manual](https://wiki.med.harvard.edu/doc/lsf/admin/fairshare.html) for additional information*
+
 
 To submit jobs to LSF: 
 
@@ -73,6 +94,8 @@ Selecting queue:
 
 * For one or two jobs, select `priority`
 * For multi-core jobs, select `mcore`
+* For 3 or more jobs taking <12h each, select `short`
+* For 3 or more jobs taking >12h each, select `long`
 
 To check the status of your jobs:
 
@@ -81,7 +104,13 @@ To check the status of your jobs:
 To terminate a job: 
 
 	bkill jobID
+
+To see why job is pending: 
+
+	bjobs -l jobID
 	
+Check out [Troubleshooting Jobs](https://wiki.med.harvard.edu/Orchestra/TroubleshootingLSFJobs) if in trouble
+
 
 ### Copying files
 
@@ -95,7 +124,7 @@ To terminate a job:
 	
 For additional help, see the [Orchestra Wiki](https://wiki.med.harvard.edu/Orchestra/NewUserGuide)
 
-## xQuartz
+### xQuartz forwarding
 System for visualizing graphics while working in terminal.
 [Download xQuartz for Mac](https://www.xquartz.org/)
 
@@ -112,3 +141,15 @@ To enable X11 forward by default, add the following to the `~/.ssh/config` file:
 
 *X11 is disabled by default in SSH clients because the remote hosts can view your X11 server*
 
+### Retrieving backups 
+Home directory backups are stored for **60 days**
+
+	cd .snapshot
+	cp file-from-snapshot to-destination
+
+
+For more information check out the [Orchestra Wiki](https://wiki.med.harvard.edu/Orchestra/WebHome)
+
+### Citing orchestra
+
+Portions of this research were conducted on the Orchestra High Performance Compute Cluster at Harvard Medical School. This NIH supported shared facility consists of thousands of processing cores and terabytes of associated storage and is partially provided through grant NCRR 1S10RR028832-01. See <http://rc.hms.harvard.edu> for more information.
