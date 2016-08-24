@@ -57,6 +57,16 @@ To view a specific number of lines use option `-n`:
 
 	head -n 1 file-name
 
+## Alias
+
+To make an alias for a command add the following line to ~/.bashrc:
+
+	alias new_command_name='list_of_commands'
+
+Then do: 
+
+	source ~/.bashrc
+
 ## Exercises
 	
 ### Exercise 1
