@@ -69,7 +69,7 @@ To submit jobs to LSF:
 	
 Where the `job.sh` script contains the following information: 
 
-	#!bin/bash
+	#!/bin/bash
 	#BSUB -n 1						#number of cores is 1
 	#BSUB -W 01:00					#runlimit is 1h
 	#BSUB -J myjob					#name the job myjob
