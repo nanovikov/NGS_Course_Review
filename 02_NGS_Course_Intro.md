@@ -132,7 +132,7 @@ This material has been adapted from a lesson developed by members of the teachin
 The materials used in this lesson were derived from work that is Copyright © Data Carpentry (<http://datacarpentry.org/>). All Data Carpentry instructional material is made available under the [Creative Commons Attribution license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 Adapted from the lesson by Tracy Teal. Original contributors: Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for Software Carpentry (<http://software-carpentry.org/>)
 
-
+[https://wiki.galaxyproject.org/Learn/GalaxyNGS101](https://wiki.galaxyproject.org/Learn/GalaxyNGS101)
 
 
 
